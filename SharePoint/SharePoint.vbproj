@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CE2EFCB7-80AF-414B-8C7B-C7A8CB823AA8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>SharePoint</RootNamespace>
-    <AssemblyName>SharePoint</AssemblyName>
+    <RootNamespace>LearnSPSharePoint</RootNamespace>
+    <AssemblyName>LearnSPSharePoint</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
@@ -18,6 +18,7 @@
     <OptionInfer>On</OptionInfer>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <SandboxedSolution>False</SandboxedSolution>
+    <IncludeAssemblyInPackage>True</IncludeAssemblyInPackage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,7 +26,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SharePoint.xml</DocumentationFile>
+    <DocumentationFile>LearnSPSharePoint.xml</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +35,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SharePoint.xml</DocumentationFile>
+    <DocumentationFile>LearnSPSharePoint.xml</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,6 +49,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
@@ -66,21 +69,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="WebParts\Lesson3\Lesson3.vb" />
+    <Compile Include="WebParts\Lesson3\Lesson3UserControl.ascx.designer.vb">
+      <DependentUpon>Lesson3UserControl.ascx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\Lesson3\Lesson3UserControl.ascx.vb">
+      <DependentUpon>Lesson3UserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="My Project\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Features\LearnSP_Site\LearnSP_Site.feature">
+      <FeatureId>{e1baf4e8-ada6-4956-8828-f3b3223a11a2}</FeatureId>
+    </None>
     <None Include="key.snk" />
+    <None Include="Modules\Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f612cb48-2141-468a-8808-0b3ddbb69f41}</SharePointProjectItemId>
+    </None>
     <None Include="Package\Package.package">
       <PackageId>{23cc1bd1-5b6b-4f70-8cc4-5c0ff24bd18b}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WebParts\Lesson3\Lesson3.webpart" />
+    <None Include="WebParts\Lesson3\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2aaff3d5-a23c-4ce6-90b0-f08b4c0b9e4f}</SharePointProjectItemId>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Content Include="Features\LearnSP_Site\LearnSP_Site.Template.xml">
+      <DependentUpon>LearnSP_Site.feature</DependentUpon>
+    </Content>
+    <Content Include="Modules\Pages\Elements.xml" />
+    <Content Include="Modules\Pages\Lesson3Auto.aspx" />
+    <Content Include="WebParts\Lesson3\Elements.xml" />
+    <Content Include="WebParts\Lesson3\Lesson3UserControl.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>

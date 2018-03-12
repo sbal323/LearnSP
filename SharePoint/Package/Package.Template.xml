@@ -1,3 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Solution xmlns="http://schemas.microsoft.com/sharepoint/">
+﻿<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="23cc1bd1-5b6b-4f70-8cc4-5c0ff24bd18b" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="LearnSPSharePoint.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="LearnSPSharePoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fe0f4217e923e06" Namespace="LearnSPSharePoint" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <TemplateFiles>
+    <TemplateFile Location="CONTROLTEMPLATES\LearnSPSharePoint\Lesson3\Lesson3UserControl.ascx" />
+  </TemplateFiles>
+  <FeatureManifests>
+    <FeatureManifest Location="SharePoint_LearnSP_Site\Feature.xml" />
+  </FeatureManifests>
 </Solution>
