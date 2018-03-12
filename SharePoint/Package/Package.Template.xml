@@ -8,6 +8,7 @@
   </Assemblies>
   <TemplateFiles>
     <TemplateFile Location="CONTROLTEMPLATES\LearnSPSharePoint\Lesson3\Lesson3UserControl.ascx" />
+    <TemplateFile Location="CONTROLTEMPLATES\LearnSPSharePoint\Header.ascx" />
   </TemplateFiles>
   <FeatureManifests>
     <FeatureManifest Location="SharePoint_LearnSP_Site\Feature.xml" />

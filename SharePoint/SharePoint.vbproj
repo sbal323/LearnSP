@@ -68,6 +68,13 @@
     <Import Include="Microsoft.SharePoint" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLTEMPLATES\LearnSPSharePoint\Header.ascx.designer.vb">
+      <DependentUpon>Header.ascx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\LearnSPSharePoint\Header.ascx.vb">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="WebParts\Lesson3\Lesson3.vb" />
     <Compile Include="WebParts\Lesson3\Lesson3UserControl.ascx.designer.vb">
@@ -82,6 +89,9 @@
     <AppDesigner Include="My Project\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2da7830e-6872-4bb9-b487-8203dfc2c29a}</SharePointProjectItemId>
+    </None>
     <None Include="Features\LearnSP_Site\LearnSP_Site.feature">
       <FeatureId>{e1baf4e8-ada6-4956-8828-f3b3223a11a2}</FeatureId>
     </None>
@@ -103,6 +113,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="CONTROLTEMPLATES\LearnSPSharePoint\Header.ascx" />
     <Content Include="Features\LearnSP_Site\LearnSP_Site.Template.xml">
       <DependentUpon>LearnSP_Site.feature</DependentUpon>
     </Content>
