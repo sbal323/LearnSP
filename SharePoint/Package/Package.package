@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="23cc1bd1-5b6b-4f70-8cc4-5c0ff24bd18b" solutionId="23cc1bd1-5b6b-4f70-8cc4-5c0ff24bd18b" resetWebServer="false" sharePointProductVersion="15.0" name="LearnSPSharePoint" isDesignerEnabled="false" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="23cc1bd1-5b6b-4f70-8cc4-5c0ff24bd18b" solutionId="23cc1bd1-5b6b-4f70-8cc4-5c0ff24bd18b" resetWebServer="false" sharePointProductVersion="15.0" name="LearnSPSharePoint" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="LearnSP.Types.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Types\Types.vbproj" />
+    <projectOutputAssembly location="LearnSP.Bl.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Bl\Bl.vbproj" />
+  </assemblies>
   <features>
     <featureReference itemId="e1baf4e8-ada6-4956-8828-f3b3223a11a2" />
   </features>

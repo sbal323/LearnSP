@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CE2EFCB7-80AF-414B-8C7B-C7A8CB823AA8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>LearnSPSharePoint</RootNamespace>
-    <AssemblyName>LearnSPSharePoint</AssemblyName>
+    <RootNamespace>SharePoint</RootNamespace>
+    <AssemblyName>LearnSP.SharePoint</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
@@ -26,7 +26,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>LearnSPSharePoint.xml</DocumentationFile>
+    <DocumentationFile>LearnSP.SharePoint.xml</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -35,7 +35,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>LearnSPSharePoint.xml</DocumentationFile>
+    <DocumentationFile>LearnSP.SharePoint.xml</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
@@ -111,7 +111,16 @@
       <SharePointProjectItemId>{2aaff3d5-a23c-4ce6-90b0-f08b4c0b9e4f}</SharePointProjectItemId>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Bl\Bl.vbproj">
+      <Project>{e1ac2a5d-3e8b-4a45-8855-07d6ab3f9561}</Project>
+      <Name>Bl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Types\Types.vbproj">
+      <Project>{29d7141f-474e-4c00-866e-1ae6be97e127}</Project>
+      <Name>Types</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="CONTROLTEMPLATES\LearnSPSharePoint\Header.ascx" />
     <Content Include="Features\LearnSP_Site\LearnSP_Site.Template.xml">

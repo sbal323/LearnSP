@@ -39,4 +39,13 @@ Partial Public Class Lesson3UserControl
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''grdMaterials control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents grdMaterials As Global.System.Web.UI.WebControls.DataGrid
 End Class

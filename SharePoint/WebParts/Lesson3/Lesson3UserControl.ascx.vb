@@ -5,6 +5,7 @@ Imports System.Web.UI.WebControls.WebParts
 
 Partial Public Class Lesson3UserControl
     Inherits UserControl
+    Dim bl As New Bl.BlLearning()
 
     Public Enum Mode
         HR = 1
@@ -16,6 +17,8 @@ Partial Public Class Lesson3UserControl
         Try
             lblHeader.Text = "<br/> Hello in " & SPContext.Current.Web.Title & " (Page Load)"
             'SomethingWrong()
+            grdMaterials.DataSource = bl.GetLearningItems().Take(20).ToList
+            grdMaterials.DataBind()
         Catch ex As Exception
             Response.Write("Something went wrong: " & ex.Message & ex.StackTrace)
         End Try

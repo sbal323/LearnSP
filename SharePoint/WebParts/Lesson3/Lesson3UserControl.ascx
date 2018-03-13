@@ -5,7 +5,7 @@
 <%@ Register Tagprefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Control Language="VB" AutoEventWireup="true" CodeBehind="Lesson3UserControl.ascx.vb" Inherits="LearnSPSharePoint.Lesson3UserControl" %>
+<%@ Control Language="VB" AutoEventWireup="true" CodeBehind="Lesson3UserControl.ascx.vb" Inherits="SharePoint.Lesson3UserControl" %>
 <h1>
 <asp:Label runat="server" ID="lblHeader"></asp:Label>
 </h1>
@@ -18,3 +18,4 @@ Vendor:
 <div>
     <asp:Button runat="server" ID="btnSave" Text="Save Vendor" />
 </div>
+<asp:DataGrid runat="server" ID="grdMaterials" AutoGenerateColumns="true"></asp:DataGrid>

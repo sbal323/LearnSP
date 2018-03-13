@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" masterpagefile="~masterurl/default.master"  inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" meta:progid="SharePoint.WebPartPage.Document" %>
-<%@ Register TagPrefix="WpNs0" Namespace="LearnSPSharePoint" Assembly="LearnSPSharePoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fe0f4217e923e06"%>
+<%@ Register TagPrefix="WpNs0" Namespace="SharePoint" Assembly="LearnSP.SharePoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fe0f4217e923e06"%>
 <%@ Register tagprefix="WebControls" namespace="Microsoft.SharePoint.WebControls" assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitle" runat="server">
