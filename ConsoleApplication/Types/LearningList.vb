@@ -13,6 +13,7 @@ Namespace Types
         Public Property Vendor As SPFieldLookupValue
         Public Property OrderDate As Date
         Public Property Description As String
+        Public Property OrderLines As New List(Of String)
 
         Public Overrides Function ToString() As String
             Return String.Format("{0} at {1} by {2} option {3} Id: {4} ",
