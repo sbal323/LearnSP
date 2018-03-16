@@ -6,6 +6,7 @@
   </assemblies>
   <features>
     <featureReference itemId="e1baf4e8-ada6-4956-8828-f3b3223a11a2" />
+    <featureReference itemId="4e8444db-0e4f-4d3c-b0e6-7b1d5d8f2105" />
   </features>
   <projectItems>
     <projectItemReference itemId="2da7830e-6872-4bb9-b487-8203dfc2c29a" />

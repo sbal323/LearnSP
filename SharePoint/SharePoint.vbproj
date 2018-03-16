@@ -75,6 +75,10 @@
       <DependentUpon>Header.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Features\Web\Web.EventReceiver.vb">
+      <DependentUpon>Web.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\LearningList.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="WebParts\Lesson3\Lesson3.vb" />
     <Compile Include="WebParts\Lesson3\Lesson3UserControl.ascx.designer.vb">
@@ -92,7 +96,10 @@
     <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{2da7830e-6872-4bb9-b487-8203dfc2c29a}</SharePointProjectItemId>
     </None>
-    <None Include="Features\LearnSP_Site\LearnSP_Site.feature">
+    <None Include="Features\Web\Web.feature">
+      <FeatureId>{4e8444db-0e4f-4d3c-b0e6-7b1d5d8f2105}</FeatureId>
+    </None>
+    <None Include="Features\Site\Site.feature">
       <FeatureId>{e1baf4e8-ada6-4956-8828-f3b3223a11a2}</FeatureId>
     </None>
     <None Include="key.snk" />
@@ -123,8 +130,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CONTROLTEMPLATES\LearnSPSharePoint\Header.ascx" />
-    <Content Include="Features\LearnSP_Site\LearnSP_Site.Template.xml">
-      <DependentUpon>LearnSP_Site.feature</DependentUpon>
+    <Content Include="Features\Web\Web.Template.xml">
+      <DependentUpon>Web.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Site\Site.Template.xml">
+      <DependentUpon>Site.feature</DependentUpon>
     </Content>
     <Content Include="Modules\Pages\Elements.xml" />
     <Content Include="Modules\Pages\Lesson3Auto.aspx" />
