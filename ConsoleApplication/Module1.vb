@@ -6,11 +6,71 @@ Module Module1
     Sub Main()
         Using site As New SPSite("http://2013appsrv2/")
             Using web As SPWeb = site.OpenWeb()
-                Lesson6(web)
+                Lesson8()
             End Using
         End Using
         Console.WriteLine("Press any key...")
         Console.ReadKey()
+    End Sub
+    Public Sub Lesson8()
+        'Lesson8InnerJoinObject()
+        'Lesson8InnerJoinString()
+        'Lesson8LeftJoin()
+        'Lesson8GroupBy()
+        'Lesson8DistinctBy()
+        Lesson8QA()
+    End Sub
+    Public Sub Lesson8QA()
+        Dim sections As New List(Of Section)
+        Dim modules As New List(Of Module42)
+        Dim modulesTarget As New List(Of Module42)
+        modulesTarget.Add(New Module42 With {.Title = "Module1"})
+        '
+        modules.Add(New Module42 With {.Title = "Module1"})
+        modules.Add(New Module42 With {.Title = "Module2"})
+        modules.Add(New Module42 With {.Title = "Module3"})
+        '
+        sections.Add(New Section With {.Title = "Section1", .Modules = modules.Where(Function(x) x.Title = "Module1" OrElse x.Title = "Module2").ToList})
+        sections.Add(New Section With {.Title = "Section2", .Modules = modules.Where(Function(x) x.Title = "Module2" OrElse x.Title = "Module3").ToList})
+        sections.Add(New Section With {.Title = "Section3", .Modules = modules.Where(Function(x) x.Title = "Module1").ToList})
+        sections.Add(New Section With {.Title = "Section4"})
+
+        sections.SelectMany(Function(x) x.Modules).DistinctBy(Function(x) x.Title).Select(Function(x) x.Title).ToList.ForEach(Sub(x) Console.WriteLine(x))
+        sections.Where(Function(x) Not modulesTarget.Any(Function(y) x.Modules.Any(Function(z) z.Title = y.Title))).ToList.ForEach(Sub(x) Console.WriteLine(x.Title))
+    End Sub
+    Public Sub Lesson8InnerJoinObject()
+        Dim joinResult = Employee.GetEmployees.Join(EmployeeBonus.GetEmployeeBonuses,
+                                  Function(e) e.Id,
+                                  Function(esd) esd.Id,
+                                  Function(e, esd) New With {.Name = e.FirstName & " " & e.LastName, .Bonus = esd.Amount & " " & esd.Currency & " " & e.Id & " " & esd.Id})
+        joinResult.ToList.ForEach(Sub(x) Console.WriteLine(x.Name & " " & x.Bonus))
+    End Sub
+    Public Sub Lesson8InnerJoinString()
+        Dim warmCountries As String() = {"Turkey", "Italy", "Spain", "Saudi Arabia", "Etiobia"}
+        Dim europeanCountries As String() = {"Denmark", "Germany", "Italy", "Portugal", "Spain"}
+        Dim joinResult = warmCountries.Join(europeanCountries, Function(warm) warm, Function(european) european, Function(warm, european) warm)
+        joinResult.ToList.ForEach(Sub(x) Console.WriteLine(x))
+    End Sub
+    Public Sub Lesson8LeftJoin()
+        Dim joinResult = Employee.GetEmployees.GroupJoin(EmployeeBonus.GetEmployeeBonuses,
+                                  Function(e) e.Id,
+                                  Function(esd) esd.Id,
+                                  Function(e, esd) New With {.Name = e.FirstName & " " & e.LastName, .Bonus = esd.Sum(Function(x) x.Amount) & " " & If(esd.Count > 0, esd(0).Currency, String.Empty)})
+        joinResult.ToList.ForEach(Sub(x) Console.WriteLine(x.Name & " " & x.Bonus))
+    End Sub
+    Public Sub Lesson8GroupBy()
+        Dim joinResult = EmployeeBonus.GetEmployeeBonuses.GroupBy(Function(x) x.Currency)
+        joinResult.ToList.ForEach(Sub(x) Console.WriteLine(x.Key & " => " & x.Count & " records"))
+        Console.WriteLine(New String("-", 15))
+        Dim joinResult1 = EmployeeBonus.GetEmployeeBonuses.GroupBy(Function(x) x.Id)
+        joinResult1.ToList.ForEach(Sub(x) Console.WriteLine(x.Key & " => " & x.Count & " records"))
+    End Sub
+    Public Sub Lesson8DistinctBy()
+        Dim joinResult = EmployeeBonus.GetEmployeeBonuses.DistinctBy(Function(x) x.Currency)
+        joinResult.ToList.ForEach(Sub(x) Console.WriteLine(x.Id & " => " & x.Amount & " " & x.Currency))
+        Console.WriteLine(New String("-", 15))
+        Dim joinResult1 = EmployeeBonus.GetEmployeeBonuses.DistinctBy(Function(x) x.Id)
+        joinResult1.ToList.ForEach(Sub(x) Console.WriteLine(x.Id & " => " & x.Amount & " " & x.Currency))
     End Sub
     Public Sub Lesson6(web As SPWeb)
         Dim bl = New BlLearning(web)

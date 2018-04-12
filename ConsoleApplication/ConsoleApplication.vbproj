@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bl\BlLearning.vb" />
+    <Compile Include="Bl\Extensions.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -118,6 +119,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SPUtility.vb" />
+    <Compile Include="Types\Employee.vb" />
     <Compile Include="Types\Item.vb" />
     <Compile Include="Types\LearningList.vb" />
   </ItemGroup>
